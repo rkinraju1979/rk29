@@ -1,0 +1,293 @@
+{
+  "title": "All Lucas Clusters Survivability Benchmark",
+  "clusters": [
+    {
+      "term": "L_0 = 2",
+      "size": 2,
+      "role": "Dual Edge Gateways / Relays",
+      "star": {
+        "edges": 1,
+        "k_cuts": {
+          "1-edge": 0.0,
+          "2-edge": 100.0,
+          "3-edge": 100.0
+        },
+        "pdr_50": 100.0,
+        "orphaned": 0.0
+      },
+      "wheel": {
+        "edges": 1,
+        "k_cuts": {
+          "1-edge": 0.0,
+          "2-edge": 100.0,
+          "3-edge": 100.0
+        },
+        "pdr_50": 100.0,
+        "orphaned": 0.0
+      },
+      "mesh": {
+        "edges": 1,
+        "k_cuts": {
+          "1-edge": 0.0,
+          "2-edge": 100.0,
+          "3-edge": 100.0
+        },
+        "pdr_50": 100.0,
+        "orphaned": 0.0
+      },
+      "best_topology": "Tied / Star Sufficient"
+    },
+    {
+      "term": "L_1 = 1",
+      "size": 1,
+      "role": "Core Backbone Cross-Connect Bridge",
+      "star": {
+        "edges": 0,
+        "k_cuts": {
+          "1-edge": 100.0,
+          "2-edge": 100.0,
+          "3-edge": 100.0
+        },
+        "pdr_50": 100.0,
+        "orphaned": 0.0
+      },
+      "wheel": {
+        "edges": 0,
+        "k_cuts": {
+          "1-edge": 100.0,
+          "2-edge": 100.0,
+          "3-edge": 100.0
+        },
+        "pdr_50": 100.0,
+        "orphaned": 0.0
+      },
+      "mesh": {
+        "edges": 0,
+        "k_cuts": {
+          "1-edge": 100.0,
+          "2-edge": 100.0,
+          "3-edge": 100.0
+        },
+        "pdr_50": 100.0,
+        "orphaned": 0.0
+      },
+      "best_topology": "Tied / Star Sufficient"
+    },
+    {
+      "term": "L_2 = 3",
+      "size": 3,
+      "role": "Cluster Head Routers (L_2)",
+      "star": {
+        "edges": 2,
+        "k_cuts": {
+          "1-edge": 0.0,
+          "2-edge": 0.0,
+          "3-edge": 100.0
+        },
+        "pdr_50": 89.6,
+        "orphaned": 0.1
+      },
+      "wheel": {
+        "edges": 3,
+        "k_cuts": {
+          "1-edge": 100.0,
+          "2-edge": 0.0,
+          "3-edge": 0.0
+        },
+        "pdr_50": 91.6,
+        "orphaned": 0.08
+      },
+      "mesh": {
+        "edges": 3,
+        "k_cuts": {
+          "1-edge": 100.0,
+          "2-edge": 0.0,
+          "3-edge": 0.0
+        },
+        "pdr_50": 96.0,
+        "orphaned": 0.04
+      },
+      "best_topology": "Mesh (Highest PDR & Multi-Path)"
+    },
+    {
+      "term": "L_3 = 4",
+      "size": 4,
+      "role": "Distribution Relays (L_3)",
+      "star": {
+        "edges": 3,
+        "k_cuts": {
+          "1-edge": 0.0,
+          "2-edge": 0.0,
+          "3-edge": 0.0
+        },
+        "pdr_50": 82.8,
+        "orphaned": 0.17
+      },
+      "wheel": {
+        "edges": 6,
+        "k_cuts": {
+          "1-edge": 100.0,
+          "2-edge": 100.0,
+          "3-edge": 80.0
+        },
+        "pdr_50": 91.2,
+        "orphaned": 0.09
+      },
+      "mesh": {
+        "edges": 6,
+        "k_cuts": {
+          "1-edge": 100.0,
+          "2-edge": 100.0,
+          "3-edge": 80.0
+        },
+        "pdr_50": 91.2,
+        "orphaned": 0.09
+      },
+      "best_topology": "Wheel (Optimal Rim Redundancy)"
+    },
+    {
+      "term": "L_4 = 7",
+      "size": 7,
+      "role": "Intermediate Sensor Pod (L_4)",
+      "star": {
+        "edges": 6,
+        "k_cuts": {
+          "1-edge": 0.0,
+          "2-edge": 0.0,
+          "3-edge": 0.0
+        },
+        "pdr_50": 85.2,
+        "orphaned": 0.44
+      },
+      "wheel": {
+        "edges": 12,
+        "k_cuts": {
+          "1-edge": 100.0,
+          "2-edge": 100.0,
+          "3-edge": 97.27
+        },
+        "pdr_50": 89.33,
+        "orphaned": 0.32
+      },
+      "mesh": {
+        "edges": 21,
+        "k_cuts": {
+          "1-edge": 100.0,
+          "2-edge": 100.0,
+          "3-edge": 100.0
+        },
+        "pdr_50": 94.0,
+        "orphaned": 0.18
+      },
+      "best_topology": "Mesh (Highest PDR & Multi-Path)"
+    },
+    {
+      "term": "L_5 = 11",
+      "size": 11,
+      "role": "Distribution Pod (L_5)",
+      "star": {
+        "edges": 10,
+        "k_cuts": {
+          "1-edge": 0.0,
+          "2-edge": 0.0,
+          "3-edge": 0.0
+        },
+        "pdr_50": 84.8,
+        "orphaned": 0.76
+      },
+      "wheel": {
+        "edges": 20,
+        "k_cuts": {
+          "1-edge": 100.0,
+          "2-edge": 100.0,
+          "3-edge": 99.1
+        },
+        "pdr_50": 89.44,
+        "orphaned": 0.53
+      },
+      "mesh": {
+        "edges": 37,
+        "k_cuts": {
+          "1-edge": 100.0,
+          "2-edge": 100.0,
+          "3-edge": 100.0
+        },
+        "pdr_50": 92.4,
+        "orphaned": 0.38
+      },
+      "best_topology": "Mesh (Highest PDR & Multi-Path)"
+    },
+    {
+      "term": "L_6 = 18",
+      "size": 18,
+      "role": "Dense Sensor Aggregator Pod (L_6)",
+      "star": {
+        "edges": 17,
+        "k_cuts": {
+          "1-edge": 0.0,
+          "2-edge": 0.0,
+          "3-edge": 0.0
+        },
+        "pdr_50": 85.6,
+        "orphaned": 1.3
+      },
+      "wheel": {
+        "edges": 34,
+        "k_cuts": {
+          "1-edge": 100.0,
+          "2-edge": 100.0,
+          "3-edge": 99.9
+        },
+        "pdr_50": 87.42,
+        "orphaned": 1.13
+      },
+      "mesh": {
+        "edges": 65,
+        "k_cuts": {
+          "1-edge": 100.0,
+          "2-edge": 100.0,
+          "3-edge": 100.0
+        },
+        "pdr_50": 91.91,
+        "orphaned": 0.73
+      },
+      "best_topology": "Mesh (Highest PDR & Multi-Path)"
+    },
+    {
+      "term": "L_7 = 29",
+      "size": 29,
+      "role": "Large Perimeter Pod (L_7)",
+      "star": {
+        "edges": 28,
+        "k_cuts": {
+          "1-edge": 0.0,
+          "2-edge": 0.0,
+          "3-edge": 0.0
+        },
+        "pdr_50": 86.4,
+        "orphaned": 1.9
+      },
+      "wheel": {
+        "edges": 56,
+        "k_cuts": {
+          "1-edge": 100.0,
+          "2-edge": 100.0,
+          "3-edge": 99.9
+        },
+        "pdr_50": 87.63,
+        "orphaned": 1.73
+      },
+      "mesh": {
+        "edges": 109,
+        "k_cuts": {
+          "1-edge": 100.0,
+          "2-edge": 100.0,
+          "3-edge": 100.0
+        },
+        "pdr_50": 91.09,
+        "orphaned": 1.25
+      },
+      "best_topology": "Mesh (Highest PDR & Multi-Path)"
+    }
+  ]
+}

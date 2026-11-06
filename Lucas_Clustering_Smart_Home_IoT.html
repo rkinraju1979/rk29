@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lucas Sequence-Guided Clustering and Graph Optimization for Survivable Smart Home IoT Networks</title>
+<style>
+  @media print {
+    body { margin: 1in; font-size: 10pt; }
+    .no-print { display: none; }
+    h1 { page-break-before: avoid; }
+    table { page-break-inside: avoid; }
+  }
+  body {
+    font-family: "Times New Roman", Times, Georgia, serif;
+    font-size: 11pt;
+    line-height: 1.45;
+    color: #111;
+    max-width: 820px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: #fff;
+  }
+  h1.title {
+    text-align: center;
+    font-size: 19pt;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #111;
+    line-height: 1.25;
+  }
+  .authors {
+    text-align: center;
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  .affiliation {
+    text-align: center;
+    font-size: 10pt;
+    font-style: italic;
+    color: #444;
+    margin-bottom: 24px;
+  }
+  .abstract-box {
+    background: #f8f9fa;
+    border: 1px solid #dcdfe3;
+    border-left: 4px solid #003366;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    border-radius: 2px;
+  }
+  .abstract-box p {
+    margin: 0 0 8px 0;
+    text-align: justify;
+    font-size: 10pt;
+  }
+  .abstract-box p:last-child {
+    margin-bottom: 0;
+  }
+  .keywords {
+    font-size: 10pt;
+    font-style: italic;
+  }
+  .keywords strong {
+    font-style: normal;
+  }
+  h2 {
+    font-size: 13pt;
+    color: #003366;
+    border-bottom: 1px solid #e1e4e8;
+    padding-bottom: 3px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+  h3 {
+    font-size: 11pt;
+    color: #222;
+    margin-top: 16px;
+    margin-bottom: 6px;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: 12px;
+    padding-left: 24px;
+  }
+  li {
+    margin-bottom: 4px;
+  }
+  .equation {
+    text-align: center;
+    font-family: "Cambria Math", "Times New Roman", serif;
+    font-style: italic;
+    margin: 12px 0;
+    font-size: 11pt;
+    padding: 4px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 20px 0;
+    font-size: 9.5pt;
+  }
+  table th {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: left;
+    padding: 8px 10px;
+    font-weight: bold;
+    border: 1px solid #003366;
+  }
+  table td {
+    padding: 7px 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  table tr:nth-child(even) td {
+    background-color: #fbfcfd;
+  }
+  .table-caption {
+    font-weight: bold;
+    font-size: 9.5pt;
+    margin-bottom: 4px;
+    color: #222;
+  }
+  .references p {
+    text-indent: -2.5em;
+    padding-left: 2.5em;
+    margin-bottom: 6px;
+    font-size: 9pt;
+  }
+  .print-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #003366;
+    color: #fff;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 10pt;
+    font-family: sans-serif;
+  }
+  .print-btn:hover {
+    background: #002244;
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">Print / Save PDF</button>
+
+<h1 class="title">Lucas Sequence-Guided Clustering and Graph Optimization for Survivable Smart Home IoT Networks</h1>
+<div class="authors">Kanaka Raju Rajana, Shanmuk Srinivas Amiripalli</div>
+<div class="affiliation">
+  Department of Computer Science and Engineering, GST, GITAM Deemed to be University, Visakhapatnam, Andhra Pradesh, India<br>
+  E-mail: krajana@gitam.edu, shamnuk39@gmail.com
+</div>
+
+<div class="abstract-box">
+  <p><strong>Abstract—</strong> Residential Internet of Things (IoT) deployments require underlying networks that maintain end-to-end data delivery even as individual sensing nodes fail from battery exhaustion or hardware faults. This study investigates a deterministic clustering framework derived from consecutive terms of the Lucas sequence, integrated with Trimetric Graph Optimization (TGO) and the Routing Protocol for Low-Power and Lossy Networks (RPL) over UDP. A 72-node network is partitioned into six progressively sized clusters containing 3, 4, 7, 11, 18, and 29 nodes. Each cluster routes member traffic through a designated cluster head connected directly to an RPL destination-oriented directed acyclic graph (DODAG) root, while TGO prunes redundant intra-cluster communication edges while preserving path redundancy. Over a 12-round simulated fault injection benchmark in Contiki-NG/COOJA, the Lucas-TGO architecture was evaluated against an equal-sized TGO topology, a cluster-tree arrangement, and an unpruned mesh. By round 12, all three benchmark topologies experienced complete network failure (0 active nodes). In contrast, the Lucas-TGO network maintained approximately 54 active nodes (75% retention), kept its packet delivery ratio above 90%, bounded end-to-end delivery latency between 19 ms and 25 ms, and consumed approximately 1.5 J per node (compared to 12.2 J per node in the equal-cluster TGO baseline). These results demonstrate that combining graded cluster sizing with algorithmic link reduction improves fault tolerance and delays catastrophic partitioning in resource-constrained IoT systems.</p>
+  <p class="keywords"><strong>Keywords:</strong> Internet of Things, smart home networks, Lucas sequence, clustering optimization, network survivability, fault tolerance, RPL.</p>
+</div>
+
+<h2>1. Introduction</h2>
+<p>Modern smart residential environments incorporate dense networks of small, battery-operated embedded sensors and actuators. These devices govern heating, ventilation, automated lighting, security systems, sub-metering, and home healthcare infrastructure. Because residential automation systems operate continuously with minimal manual maintenance, the wireless mesh must tolerate regular node dropouts without experiencing complete communication blackouts. Physical enclosures, concrete partition walls, 2.4 GHz spectrum interference, and battery depletion frequently disable transceivers. When critical forwarding nodes fail, the network risks fragmenting into disconnected segments, halting telemetry and automated control loops.</p>
+
+<p>Clustering represents a well-established strategy for managing transmission overhead in such environments. By grouping devices under a representative cluster head (CH), local member nodes transmit over shorter distances, while the cluster head aggregates and forwards telemetry toward the gateway. Extensive surveys document the role of clustering in mitigating radio energy expenditure and extending operational spans in wireless sensor networks (WSNs) [1], [2]. Recent efforts have largely focused on adaptive heuristics, metaheuristic algorithms, and machine learning methods to improve cluster-head selection and inter-cluster routing [3]–[6].</p>
+
+<p>Most existing formulations optimize for network lifetime or aggregate power consumption under standard operational conditions. Network survivability—the capacity to maintain operational data delivery paths while experiencing progressive, non-uniform node loss—is often treated as a secondary byproduct rather than an explicit design objective. Although targeted survivability frameworks exist [7]–[11], they rarely explore how structural variance in cluster dimensions affects resilience against cascading dropouts.</p>
+
+<p>Standard clustering schemes conventionally enforce uniform cluster sizes or form clusters dynamically through iterative runtime negotiation. This work explores a different approach: sizing clusters deterministically using mathematical sequences. The Lucas sequence (2, 1, 3, 4, 7, 11, 18, 29, …) satisfies the same recurrence relation as the Fibonacci series (<em>L<sub>n</sub> = L<sub>n-1</sub> + L<sub>n-2</sub></em>) but begins from initial values <em>L<sub>0</sub> = 2</em> and <em>L<sub>1</sub> = 1</em> [12]. Using successive Lucas terms produces an asymmetric, graded distribution of cluster sizes whose convergence toward the golden ratio (<em>&phi; &approx; 1.618</em>) balances forwarding overhead and node concentrations across the topology.</p>
+
+<p>This paper evaluates a Lucas-guided clustering design for smart home IoT installations. A 72-node wireless sensor topology is divided into six clusters corresponding to consecutive Lucas numbers (<em>L<sub>2</sub></em> through <em>L<sub>7</sub></em>). Cluster heads interface directly with an RPL sink acting as the root of a destination-oriented directed acyclic graph (DODAG) [13], handling sensor readings transmitted via UDP. Intra-cluster topologies are refined using Trimetric Graph Optimization (TGO) to eliminate redundant links while preserving detour paths.</p>
+
+<p>The primary contributions of this paper are:</p>
+<ul>
+  <li><strong>Sequence-Guided Cluster Partitioning:</strong> A closed-form deterministic cluster sizing formulation based on Lucas numbers that maps directly to total node count identities.</li>
+  <li><strong>Layered Routing Architecture:</strong> Combining TGO link pruning inside individual clusters with RPL DODAG uplinks from each cluster head to the sink node.</li>
+  <li><strong>Survivability Evaluation:</strong> A comparative simulation benchmark assessing node retention, cumulative energy expenditure, packet delivery ratio (PDR), and transit latency across 12 fault-injection rounds.</li>
+  <li><strong>Isolated Comparative Baselines:</strong> Decoupling the performance impact of link pruning from cluster sizing by benchmarking against equal-cluster TGO, unpruned mesh, and cluster-tree configurations.</li>
+</ul>
+
+<p>The remaining sections are structured as follows: Section 2 reviews related literature. Section 3 details the system model, Lucas formulation, TGO algorithm, and baseline configurations. Section 4 presents the experimental environment, empirical curves, and comparative analysis. Section 5 summarizes findings and suggests practical extensions.</p>
+
+<h2>2. Related Work</h2>
+<h3>2.1 Energy-Efficient Clustering in WSN and IoT Environments</h3>
+<p>Clustering taxonomies categorize protocols by their clustering criteria, rotation mechanisms, and adaptation to network heterogeneity [1], [2]. Recent contributions explore varied optimization paradigms: Goel et al. [3] implemented adaptive hybrid optimization for cluster formation; Zhang et al. [6] applied artificial bee colony searches to multi-hop cluster layouts; Lonkar et al. [5] examined empirical hybrid algorithms for cluster-head selection; and Hu et al. [4] utilized feature-graph neural networks (FGOGNN) for routing decisions. A persistent challenge in clustered data gathering is the energy hole or hotspot problem, where nodes in closer proximity to the base station exhaust their batteries prematurely due to heavy relaying duties [14]. In medical telemetry settings, Manchanda et al. [15] applied fuzzy logic alongside metaheuristics to balance cluster configurations, while Koyalil and Rajalingam [16] surveyed bio-inspired algorithms targeting operational longevity. While learning and search-based heuristics offer dynamic adaptability, they introduce computational and signalling overhead during setup and re-clustering phases.</p>
+
+<h3>2.2 Fault Tolerance and Network Survivability</h3>
+<p>Survivability analysis examines whether a communication topology remains functional during progressive physical attrition. Mansour et al. [10] developed an energy-aware fault-tolerant clustering protocol explicitly targeting sensor survivability. Yang et al. [17] introduced dynamic hierarchical backup heads to maintain connectivity in underwater acoustic-optical sensor networks. Structural resilience has also been studied through virtualization layers [7], dynamically relocated sink topologies [8], and mobile data collectors in unattended environments [18]. Moving toward testbed validation, Elappila and Chinara [9] implemented survivability protocols on Contiki-OS across physical hardware motes. Complementary investigations cover distributed self-healing algorithms [19], edge application state recovery [20], trust-based virtual network embedding [21], node importance evaluations under heavy network load [22], operational compliance verification in power distribution grids [23], and system decay under targeted resource exhaustion attacks [11].</p>
+
+<h3>2.3 Broader Uses of Clustering in IoT Systems</h3>
+<p>Clustering also serves diverse functions beyond radio topology management. Examples include process mining trace classification in industrial workflows [24], congestion-managed data queues in medical cloud networks [25], and requirement grouping during IoT software engineering cycles [26].</p>
+
+<h3>2.4 Research Gap</h3>
+<p>Table 1 outlines key representative studies. Prior research relies almost exclusively on dynamic discovery, stochastic metaheuristics, or iterative cluster formation. The use of deterministic integer sequences to partition network sizing remains unexamined. This paper investigates whether an asymmetric, sequence-driven cluster hierarchy combined with graph pruning provides measurable survivability advantages over traditional uniform-clustering strategies.</p>
+
+<div class="table-caption">Table 1: Summary of Representative Studies</div>
+<table>
+  <thead>
+    <tr>
+      <th>Reference</th>
+      <th>Primary Focus</th>
+      <th>Methodology</th>
+      <th>Relevance to Present Study</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>[1]</strong></td>
+      <td>Energy efficiency in WSN clustering</td>
+      <td>Survey / Taxonomy</td>
+      <td>Foundational principles of cluster energy dissipation</td>
+    </tr>
+    <tr>
+      <td><strong>[2]</strong></td>
+      <td>Heterogeneous dynamic clustering</td>
+      <td>Systematic literature review</td>
+      <td>Motivates the use of non-uniform cluster sizing</td>
+    </tr>
+    <tr>
+      <td><strong>[3]</strong></td>
+      <td>Energy-efficient WSN clustering</td>
+      <td>Adaptive hybrid optimization</td>
+      <td>Algorithmic baseline; contrasts with deterministic partitioning</td>
+    </tr>
+    <tr>
+      <td><strong>[6]</strong></td>
+      <td>Multi-hop cluster topologies</td>
+      <td>Artificial bee colony metaheuristic</td>
+      <td>Explores multi-hop intra-cluster overheads</td>
+    </tr>
+    <tr>
+      <td><strong>[4]</strong></td>
+      <td>Graph-driven cluster routing</td>
+      <td>Graph neural network (FGOGNN)</td>
+      <td>Graph-theoretic representation of sensor networks</td>
+    </tr>
+    <tr>
+      <td><strong>[10]</strong></td>
+      <td>Fault-tolerant sensor clustering</td>
+      <td>Energy-aware protocol engineering</td>
+      <td>Core objective: sustaining packet flow during node loss</td>
+    </tr>
+    <tr>
+      <td><strong>[17]</strong></td>
+      <td>Survivable underwater sensor networks</td>
+      <td>Dynamic hierarchical backup heads</td>
+      <td>Demonstrates the utility of secondary cluster heads</td>
+    </tr>
+    <tr>
+      <td><strong>[9]</strong></td>
+      <td>IoT protocol implementation</td>
+      <td>Contiki-OS on hardware testbed</td>
+      <td>Practical blueprint for embedded verification</td>
+    </tr>
+    <tr>
+      <td><strong>[15]</strong></td>
+      <td>Clustered healthcare monitoring</td>
+      <td>Fuzzy logic and metaheuristics</td>
+      <td>Multi-constraint optimization in constrained topologies</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>3. Proposed Methodology</h2>
+<h3>3.1 Network Model</h3>
+<p>The smart home deployment is modeled as an undirected graph <em>G = (V, E)</em>, where the vertex set <em>V</em> (<em>|V| = N = 72</em>) represents stationary sensor motes deployed across interior residential spaces, and <em>E</em> represents bidirectional wireless communication links. A single sink node acts as the data collection gateway. Nodes remain stationary post-deployment. Over successive operational rounds <em>r &isin; {1, 2, &hellip;, 12}</em>, individual nodes exhaust their batteries or fail randomly. The remaining active subgraph <em>G'(r) = (V'(r), E'(r))</em> determines whether telemetry packets successfully reach the sink.</p>
+
+<h3>3.2 Lucas Sequence-Based Cluster Sizing</h3>
+<p>The classical Lucas integer recurrence is given by:</p>
+<div class="equation">L<sub>0</sub> = 2, &nbsp; L<sub>1</sub> = 1, &nbsp; L<sub>n</sub> = L<sub>n-1</sub> + L<sub>n-2</sub> &nbsp; for n &ge; 2</div>
+<p>generating the series 2, 1, 3, 4, 7, 11, 18, 29, 47, 76, &hellip;</p>
+<p>The proposed scheme defines six distinct cluster groups whose member quotas correspond to six consecutive Lucas terms starting at index <em>k = 2</em>:</p>
+<div class="equation">S<sub>k</sub> = L<sub>k+1</sub>, &nbsp; k &isin; {1, 2, &hellip;, 6}</div>
+<p>yielding cluster capacities:</p>
+<div class="equation">(S<sub>1</sub>, S<sub>2</sub>, S<sub>3</sub>, S<sub>4</sub>, S<sub>5</sub>, S<sub>6</sub>) = (3, 4, 7, 11, 18, 29)</div>
+<p>The total network capacity matches the established Lucas summation identity &sum;<sub>i=0</sub><sup>m</sup> L<sub>i</sub> = L<sub>m+2</sub> &minus; 1:</p>
+<div class="equation">N = &sum;<sub>k=1</sub><sup>6</sup> S<sub>k</sub> = &sum;<sub>i=2</sub><sup>7</sup> L<sub>i</sub> = (L<sub>9</sub> &minus; 1) &minus; (L<sub>0</sub> + L<sub>1</sub>) = (76 &minus; 1) &minus; (2 + 1) = 72</div>
+<p>Because consecutive Lucas terms satisfy lim<sub>n&rarr;&infin;</sub> (L<sub>n+1</sub> / L<sub>n</sub>) = &phi; &approx; 1.618, each successive cluster accommodates roughly 1.6 times more nodes than the preceding one. This distribution avoids assigning identical traffic loads across all cluster heads, allowing the network to retain functional pathways across differently scaled clusters as nodes drop out.</p>
+
+<h3>3.3 Cluster Heads, Routing Structure, and Transport</h3>
+<p>Each cluster elects a single cluster head (<em>CH<sub>k</sub></em>) responsible for gathering readings from member nodes across intra-cluster paths and relaying aggregated packets to the sink:</p>
+<ul>
+  <li><strong>Cluster 1 (<em>S<sub>1</sub> = 3</em> nodes):</strong> Node 1 (<em>CH</em>)</li>
+  <li><strong>Cluster 2 (<em>S<sub>2</sub> = 4</em> nodes):</strong> Node 4 (<em>CH</em>)</li>
+  <li><strong>Cluster 3 (<em>S<sub>3</sub> = 7</em> nodes):</strong> Node 8 (<em>CH</em>)</li>
+  <li><strong>Cluster 4 (<em>S<sub>4</sub> = 11</em> nodes):</strong> Node 15 (<em>CH</em>)</li>
+  <li><strong>Cluster 5 (<em>S<sub>5</sub> = 18</em> nodes):</strong> Node 26 (<em>CH</em>)</li>
+  <li><strong>Cluster 6 (<em>S<sub>6</sub> = 29</em> nodes):</strong> Node 44 (<em>CH</em>)</li>
+</ul>
+<p>The sink acts as the DODAG root under RPL [13]. Cluster heads establish dedicated upward RPL routing entries toward the root, separating intra-cluster local data collection from primary inter-cluster transit. Sensor packets travel via UDP.</p>
+
+<h3>3.4 Trimetric Graph Optimization (TGO)</h3>
+<p>Dense intra-cluster connectivity increases transmission collisions, idle listening, and routing control overhead. TGO prunes dense intra-cluster cliques down to a reduced edge set <em>E'<sub>k</sub> &sub; E<sub>k</sub></em>. The optimization retains direct star links between the cluster head and member nodes while maintaining a sparse set of peripheral lateral edges among neighboring motes. These lateral edges provide alternate local detours if a direct link to the cluster head degrades, preventing member isolation without maintaining a complete mesh.</p>
+
+<h3>3.5 Execution Workflow</h3>
+<ol>
+  <li>Calculate cluster capacities <em>S<sub>k</sub></em> using the Lucas recurrence (<em>S<sub>1</sub>=3</em> to <em>S<sub>6</sub>=29</em>) and confirm &sum; <em>S<sub>k</sub> = 72</em>.</li>
+  <li>Assign sensor devices to the six clusters based on these quotas.</li>
+  <li>Designate the cluster head node for each group.</li>
+  <li>Establish candidate local wireless links between motes within transmission range.</li>
+  <li>Apply TGO pruning to reduce intra-cluster edge density while maintaining redundant detour paths.</li>
+  <li>Connect all six cluster heads to the RPL sink to construct the DODAG.</li>
+  <li>Execute the 12-round simulation under fault injection, recording active node counts, energy depletion, PDR, and end-to-end latency.</li>
+</ol>
+
+<h3>3.6 Benchmark Topologies</h3>
+<p>To isolate whether performance changes stem from link pruning or cluster sizing, the proposed system was evaluated against three control configurations (Table 2):</p>
+
+<div class="table-caption">Table 2: Evaluated Network Topologies</div>
+<table>
+  <thead>
+    <tr>
+      <th>Topology</th>
+      <th>Cluster Configuration</th>
+      <th>Intra-Cluster Structure</th>
+      <th>Cluster Head to Sink Uplink</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Lucas TGO (Proposed)</strong></td>
+      <td>6 clusters: 3, 4, 7, 11, 18, 29 nodes</td>
+      <td>Pruned via TGO</td>
+      <td>Direct RPL-UDP uplink</td>
+    </tr>
+    <tr>
+      <td><strong>Equal TGO</strong></td>
+      <td>6 uniform clusters: 12 nodes each</td>
+      <td>Pruned via TGO</td>
+      <td>Direct RPL-UDP uplink</td>
+    </tr>
+    <tr>
+      <td><strong>Cluster Tree</strong></td>
+      <td>8 uniform clusters: 9 nodes each (1 CH + 8 leaves)</td>
+      <td>Strict star (leaves to CH only)</td>
+      <td>Direct RPL-UDP uplink</td>
+    </tr>
+    <tr>
+      <td><strong>Mesh Network</strong></td>
+      <td>6 uniform clusters: 12 nodes each</td>
+      <td>Unpruned full mesh</td>
+      <td>Direct RPL-UDP uplink</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4. Performance Evaluation and Analysis</h2>
+<h3>4.1 Simulation Environment</h3>
+<p>Simulations were conducted in Contiki-NG utilizing the COOJA network simulator. The virtual motes emulate CC2420 IEEE 802.15.4 transceivers deployed over a 200 m &times; 200 m residential propagation area using the Unit Disk Graph Model (UDGM) with distance loss. Table 3 specifies the runtime parameters.</p>
+
+<div class="table-caption">Table 3: Simulation Parameters</div>
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Configuration Setting</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Network Scale</strong></td>
+      <td>72 sensor motes + 1 sink gateway (RPL Root)</td>
+    </tr>
+    <tr>
+      <td><strong>Network Topologies</strong></td>
+      <td>Lucas TGO, Equal TGO, Cluster Tree, Mesh</td>
+    </tr>
+    <tr>
+      <td><strong>Protocol Stack</strong></td>
+      <td>RPL (Non-Storing/Storing DODAG) over UDP / IPv6</td>
+    </tr>
+    <tr>
+      <td><strong>Evaluation Span</strong></td>
+      <td>12 discrete operational rounds</td>
+    </tr>
+    <tr>
+      <td><strong>Simulator Platform</strong></td>
+      <td>Contiki-NG / COOJA simulation tool</td>
+    </tr>
+    <tr>
+      <td><strong>Propagation Model</strong></td>
+      <td>UDGM Distance Loss; <em>R<sub>tx</sub> = 50 m</em>, <em>R<sub>int</sub> = 60 m</em></td>
+    </tr>
+    <tr>
+      <td><strong>Initial Energy Reserve</strong></td>
+      <td>20.0 Joules per node</td>
+    </tr>
+    <tr>
+      <td><strong>Traffic Characteristics</strong></td>
+      <td>Constant Bit Rate (CBR): 1 packet per 60 s per node; 30-byte payload (40 bytes at network layer)</td>
+    </tr>
+    <tr>
+      <td><strong>Fault Injection Model</strong></td>
+      <td>Combined energy depletion and 5% random node failure per round</td>
+    </tr>
+    <tr>
+      <td><strong>Statistical Replication</strong></td>
+      <td>10 independent seeded runs; results plotted as ensemble averages</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>4.2 Evaluation Metrics</h3>
+<p>For each round <em>r &isin; {1, 2, &hellip;, 12}</em>, four core performance indicators are evaluated:</p>
+<ol>
+  <li><strong>Network Survivability (SR):</strong> The proportion of surviving active nodes <em>A(r)</em> relative to initial count <em>N</em>:
+    <div class="equation">SR(r) = (A(r) / N) &times; 100%</div>
+  </li>
+  <li><strong>Mean Energy Dissipation per Node (E<sub>avg</sub>):</strong> Cumulative energy consumed across the network divided by initial node count:
+    <div class="equation">E<sub>avg</sub>(r) = (1 / N) &sum;<sub>i=1</sub><sup>N</sup> E<sub>i</sub>(r) &nbsp; [Joules]</div>
+  </li>
+  <li><strong>Packet Delivery Ratio (PDR):</strong> The ratio of successfully received packets at the sink <em>P<sub>rx</sub>(r)</em> to total packets generated by active nodes <em>P<sub>tx</sub>(r)</em>:
+    <div class="equation">PDR(r) = (P<sub>rx</sub>(r) / P<sub>tx</sub>(r)) &times; 100%</div>
+  </li>
+  <li><strong>End-to-End Latency:</strong> The average transit time (in milliseconds) taken by telemetry packets to travel from source motes to the sink.</li>
+</ol>
+
+<h3>4.3 Results</h3>
+<div class="table-caption">Table 4: Performance Summary Across Evaluated Topologies at Rounds 6 and 12</div>
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Round</th>
+      <th>Lucas TGO (Proposed)</th>
+      <th>Equal TGO</th>
+      <th>Cluster Tree</th>
+      <th>Mesh Network</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2"><strong>Active Nodes (N=72)</strong></td>
+      <td>6</td>
+      <td>&approx; 63</td>
+      <td>&approx; 52</td>
+      <td>&approx; 18</td>
+      <td>&approx; 8</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>&approx; 54 (75%)</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><strong>Energy Consumption (J/node)</strong></td>
+      <td>6</td>
+      <td>&approx; 0.8</td>
+      <td>&approx; 4.1</td>
+      <td>&approx; 2.2</td>
+      <td>&approx; 2.8</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>&approx; 1.5</td>
+      <td>&approx; 12.2</td>
+      <td>&approx; 2.2 (dead)</td>
+      <td>&approx; 2.8 (dead)</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><strong>Packet Delivery Ratio (%)</strong></td>
+      <td>6</td>
+      <td>&approx; 96%</td>
+      <td>&approx; 82%</td>
+      <td>&approx; 32%</td>
+      <td>&approx; 10%</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>&approx; 91%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><strong>End-to-End Latency (ms)</strong></td>
+      <td>6</td>
+      <td>&approx; 21</td>
+      <td>&approx; 29</td>
+      <td>&approx; 72</td>
+      <td>&approx; 150</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>&approx; 25</td>
+      <td>Failed</td>
+      <td>Failed</td>
+      <td>Failed</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Active Node Retention</h3>
+<p>All networks began with 72 operational nodes. The unpruned mesh topology deteriorated rapidly under collision overhead and routing churn, retaining only 8 nodes at round 6 and failing entirely by round 7. The cluster tree collapsed shortly after, dropping to 0 functional nodes by round 8 due to cluster-head depletion isolating entire star branches. Equal TGO maintained better operational stability through round 6 (52 active nodes), but its attrition accelerated in later rounds, leading to complete failure by round 12. In contrast, Lucas TGO degraded gradually, maintaining 63 active nodes at round 6 and 54 nodes (&approx; 75%) at round 12.</p>
+
+<h3>Energy Dissipation</h3>
+<p>Lucas TGO exhibited the lowest per-node energy expenditure throughout the trial, recording 0.8 J at round 6 and 1.5 J at round 12. Equal TGO climbed to 4.1 J at round 6 and reached 12.2 J by round 12. The energy dissipation curves for the cluster-tree and mesh networks plateaued at 2.2 J and 2.8 J, respectively, around rounds 7 and 8. These plateaus reflect network extinction rather than energy efficiency; with all nodes dead, no additional energy could be consumed.</p>
+
+<h3>Packet Delivery Ratio (PDR)</h3>
+<p>Lucas TGO maintained a reliable delivery ratio between 98% and 91% across all 12 rounds. Equal TGO tracked the proposed system closely during the first two rounds (&approx; 97%), but declined to 82% at round 6, dropped to 53% by round 10, and collapsed to 0% at round 12 as its cluster heads failed. The cluster-tree baseline fell below 50% delivery by round 5, and the unpruned mesh dropped below 50% by round 4.</p>
+
+<h3>End-to-End Latency</h3>
+<p>Packet delivery latency for Lucas TGO remained steady throughout the benchmark, rising slightly from 19 ms at round 1 to 25 ms at round 12. Equal TGO delivered lower initial latencies during rounds 1 to 3 (15 ms to 19 ms), but its latency escalated to 29 ms at round 6 and peaked at 85 ms at round 11 before complete failure. The cluster tree reached 95 ms at round 7, while the mesh network experienced severe contention, peaking near 150 ms at round 6 before losing end-to-end connectivity.</p>
+
+<h2>4.4 Discussion</h2>
+<p>These results highlight two distinct operational effects:</p>
+<ol>
+  <li><strong>Impact of Link Pruning:</strong> Comparing the unpruned mesh with Equal TGO demonstrates the value of intra-cluster link optimization. Both configurations share identical 12-node cluster sizes, yet Equal TGO retained more functional nodes, lowered energy drain, and preserved delivery ratios for several rounds longer. Eliminating redundant intra-cluster communication channels suppresses packet collisions and control-message amplification while preserving necessary forwarding paths.</li>
+  <li><strong>Impact of Lucas-Guided Sizing:</strong> Comparing Equal TGO with Lucas TGO isolates the influence of cluster sizing. Both use identical TGO link pruning, yet Lucas TGO maintained stable operation through round 12, whereas Equal TGO suffered complete structural collapse.</li>
+</ol>
+
+<p>In uniform clusters, all cluster heads handle similar member counts and forward comparable traffic volumes toward the sink, causing them to reach their battery exhaustion thresholds around the same time. Once these heads fail simultaneously, the network partitions rapidly. Under the Lucas distribution, smaller clusters (<em>S<sub>1</sub>=3, S<sub>2</sub>=4</em>) handle minimal forwarding overhead, preserving low-latency relay bridges toward the sink. Larger clusters (<em>S<sub>5</sub>=18, S<sub>6</sub>=29</em>) leverage their higher internal node density to maintain local detour routes if intermediate forwarders fail. This asymmetry staggers the rate of energy depletion across cluster heads, preventing coordinated network-wide failure.</p>
+
+<p><strong>Limitations:</strong> These findings reflect an initial evaluation using a 72-node synthetic residential simulation over 12 rounds. While the empirical trends are clear, formal mathematical proofs of TGO convergence bounds, dynamic cluster-head rotation, and tests across physical hardware testbeds under varying traffic bursts remain necessary to establish broader operational bounds.</p>
+
+<h2>5. Conclusion and Future Work</h2>
+<p>This paper investigated a Lucas sequence-based clustering framework designed to improve fault tolerance and survivability in smart home IoT deployments. By partitioning 72 sensor nodes into six progressively sized clusters (3, 4, 7, 11, 18, and 29 nodes) combined with Trimetric Graph Optimization and an RPL-UDP collection tree, the architecture staggers energy depletion and maintains routing redundancy. Under simulated fault injection, the proposed Lucas-TGO system preserved 75% of its sensing nodes through 12 operational rounds, sustained a packet delivery ratio above 90%, kept transit latency below 25 ms, and consumed 1.5 J per node. Under identical experimental conditions, uniform-clustering, cluster-tree, and full-mesh topologies experienced total network failure by round 12.</p>
+
+<p>Planned future work will focus on:</p>
+<ul>
+  <li>Validating performance across physical embedded hardware motes using Contiki-NG under real-world interference and non-periodic traffic bursts.</li>
+  <li>Developing dynamic cluster-head rotation algorithms and autonomous self-healing routines to extend operational lifespans once primary cluster heads deplete their reserves.</li>
+  <li>Evaluating resilience against targeted denial-of-service and routing exhaustion attacks.</li>
+  <li>Formulating generalized sequence-based partitioning models for large-scale industrial and municipal IoT deployments exceeding hundreds of nodes.</li>
+</ul>
+
+<h2>References</h2>
+<div class="references">
+  <p>[1] W. B. Nedham and A. K. M. Al-Qurabat, “A comprehensive review of clustering approaches for energy efficiency in wireless sensor networks,” <em>Int. J. Comput. Appl. Technol.</em>, vol. 72, no. 2, pp. 139–160, 2023. <a href="https://doi.org/10.1504/IJCAT.2023.133035">https://doi.org/10.1504/IJCAT.2023.133035</a></p>
+  <p>[2] M. F. Alomari, M. A. Mahmoud, and R. Ramli, “A systematic review on the energy efficiency of dynamic clustering in a heterogeneous environment of wireless sensor networks (WSNs),” <em>Electronics</em>, vol. 11, no. 18, p. 2837, 2022. <a href="https://doi.org/10.3390/electronics11182837">https://doi.org/10.3390/electronics11182837</a></p>
+  <p>[3] S. Goel et al., “Energy efficient clustering protocol in wireless sensor networks using an adaptive hybrid optimization algorithm,” <em>Sci. Rep.</em>, vol. 16, no. 1, p. 6300, 2026. <a href="https://doi.org/10.1038/s41598-026-36957-6">https://doi.org/10.1038/s41598-026-36957-6</a></p>
+  <p>[4] H. Hu, S. Liu, Q. Kang, S. Zhang, and C. Tian, “FGOGNN: An energy-efficient and intelligent cluster-based routing protocol for wireless sensor networks,” <em>Symmetry</em>, vol. 18, no. 8, p. 1319, 2026. <a href="https://doi.org/10.3390/sym18081319">https://doi.org/10.3390/sym18081319</a></p>
+  <p>[5] B. Lonkar, A. Kuthe, P. Charde, A. Dehankar, and R. Kolte, “Optimal hybrid energy-saving cluster head selection for wireless sensor networks: An empirical study,” <em>Peer-to-Peer Netw. Appl.</em>, vol. 18, no. 4, p. 182, 2025. <a href="https://doi.org/10.1007/s12083-025-02002-y">https://doi.org/10.1007/s12083-025-02002-y</a></p>
+  <p>[6] S. Zhang, X. Liu, and M. Trik, “Energy efficient multi hop clustering using artificial bee colony metaheuristic in WSN,” <em>Sci. Rep.</em>, vol. 15, no. 1, p. 26803, 2025. <a href="https://doi.org/10.1038/s41598-025-12321-y">https://doi.org/10.1038/s41598-025-12321-y</a></p>
+  <p>[7] B. S. Sukhadeo, S. D. Dhurgude, Y. D. Sinkar, and S. V. Athawale, “A framework of survivability model virtualized wireless sensor networks for IoT-assisted wireless sensor network,” <em>Internet Technol. Lett.</em>, vol. 8, no. 2, p. e552, 2025. <a href="https://doi.org/10.1002/itl2.552">https://doi.org/10.1002/itl2.552</a></p>
+  <p>[8] A. Abdi Seyedkolaei, “Dynamic sink placement in wireless sensor networks for enhancing network lifetime and improving network survivability,” <em>J. Supercomput.</em>, vol. 81, no. 8, p. 952, 2025. <a href="https://doi.org/10.1007/s11227-025-07395-4">https://doi.org/10.1007/s11227-025-07395-4</a></p>
+  <p>[9] M. Elappila and S. Chinara, “Implementation of survivability aware protocols in WSN for IoT applications using Contiki-OS and hardware testbed evaluation,” <em>Microprocess. Microsyst.</em>, vol. 104, p. 104988, 2024. <a href="https://doi.org/10.1016/j.micpro.2023.104988">https://doi.org/10.1016/j.micpro.2023.104988</a></p>
+  <p>[10] R. F. Mansour et al., “Energy aware fault tolerant clustering with routing protocol for improved survivability in wireless sensor networks,” <em>Comput. Netw.</em>, vol. 212, p. 109049, 2022. <a href="https://doi.org/10.1016/j.comnet.2022.109049">https://doi.org/10.1016/j.comnet.2022.109049</a></p>
+  <p>[11] R. Pietrantuono, M. Ficco, and F. Palmieri, “Survivability analysis of IoT systems under resource exhausting attacks,” <em>IEEE Trans. Inf. Forensics Security</em>, vol. 18, pp. 3277–3288, 2023. <a href="https://doi.org/10.1109/TIFS.2023.3278449">https://doi.org/10.1109/TIFS.2023.3278449</a></p>
+  <p>[12] T. Koshy, <em>Fibonacci and Lucas Numbers with Applications</em>. New York, NY, USA: Wiley, 2001.</p>
+  <p>[13] T. Winter, Ed., P. Thubert, Ed., A. Brandt, J. Hui, R. Kelsey, P. Levis, K. Pister, R. Struik, J.-P. Vasseur, and R. Alexander, “RPL: IPv6 routing protocol for low-power and lossy networks,” Internet Engineering Task Force, RFC 6550, Mar. 2012. <a href="https://doi.org/10.17487/RFC6550">https://doi.org/10.17487/RFC6550</a></p>
+  <p>[14] B. Lonkar et al., “A review of hybrid clustering and routing protocols for the hotspot problem in wireless sensor networks,” <em>Peer-to-Peer Netw. Appl.</em>, vol. 19, no. 1, p. 8, 2026. <a href="https://doi.org/10.1007/s12083-025-02135-0">https://doi.org/10.1007/s12083-025-02135-0</a></p>
+  <p>[15] R. Manchanda et al., “Energy-efficient clustering and routing for IoT-enabled healthcare using adaptive fuzzy logic and hybrid optimization,” <em>Sci. Rep.</em>, vol. 15, no. 1, p. 34619, 2025. <a href="https://doi.org/10.1038/s41598-025-18243-z">https://doi.org/10.1038/s41598-025-18243-z</a></p>
+  <p>[16] A. Koyalil and S. Rajalingam, “Nature-inspired metaheuristic strategies in energy-efficient wireless sensor networks for enhancing network lifetime: A review,” <em>Wireless Pers. Commun.</em>, pp. 1–31, 2026. <a href="https://doi.org/10.1007/s11277-026-12065-6">https://doi.org/10.1007/s11277-026-12065-6</a></p>
+  <p>[17] X. Yang, W. Zhu, J. Li, X. Zeng, and Y. Qiu, “An adaptive clustering routing algorithm with high survivability based on dynamic hierarchical head backup for underwater optical-acoustic hybrid wireless sensor networks,” <em>IEEE Sensors J.</em>, 2026. <a href="https://doi.org/10.1109/JSEN.2026.3670110">https://doi.org/10.1109/JSEN.2026.3670110</a></p>
+  <p>[18] N. Hegde and P. Amin, “Improvised mobile sink based data survivability in unattended wireless sensor networks,” in <em>Proc. Int. Conf. ICT Sustain. Dev.</em>, Cham, Switzerland: Springer, Jul. 2025, pp. 163–172. <a href="https://doi.org/10.1007/978-3-032-06694-7_15">https://doi.org/10.1007/978-3-032-06694-7_15</a></p>
+  <p>[19] M. K. Watfa, “Immune-economic self-healing: A distributed fault-tolerance algorithm for IoT networks,” in <em>Proc. 9th Int. Conf. Commun. Eng. Technol. (ICCET)</em>, IEEE, Jun. 2026, pp. 189–197. <a href="https://doi.org/10.1109/ICCET70051.2026.11659029">https://doi.org/10.1109/ICCET70051.2026.11659029</a></p>
+  <p>[20] V. Mafeni, P. B. Ta, and Y. Kim, “A dynamic lifecycle-aware disaster recovery framework for stateful IoT applications in edge environments,” <em>IEEE Access</em>, vol. 14, pp. 50739–50754, 2026. <a href="https://doi.org/10.1109/ACCESS.2026.3679705">https://doi.org/10.1109/ACCESS.2026.3679705</a></p>
+  <p>[21] P. Rezaeimoghaddam and I. Al-Anbagi, “Heuristic and reinforcement learning-based survivable trust-aware virtual network embedding for IoT networks,” <em>Ad Hoc Netw.</em>, vol. 177, p. 103898, 2025. <a href="https://doi.org/10.1016/j.adhoc.2025.103898">https://doi.org/10.1016/j.adhoc.2025.103898</a></p>
+  <p>[22] K. B. Siddiqa et al., “Assessment of survivability and importance analysis for networks managing intricate traffic flows,” <em>IEEE Commun. Stand. Mag.</em>, 2025. <a href="https://doi.org/10.1109/MCOMSTD.2025.3638981">https://doi.org/10.1109/MCOMSTD.2025.3638981</a></p>
+  <p>[23] M. Zekun, W. Minrong, Y. Geng, D. Guangzhi, D. Wenqi, and W. Qipeng, “Enhancing survivability in power IoT systems based on compliance checks,” in <em>Proc. Asia-Europe Conf. Cybersecurity, Internet Things Soft Comput. (CITSC)</em>, IEEE, Jan. 2025, pp. 930–935. <a href="https://doi.org/10.1109/CITSC64390.2025.00174">https://doi.org/10.1109/CITSC64390.2025.00174</a></p>
+  <p>[24] Y. Bertrand, J. De Weerdt, and E. Serral, “TROPICCAL: Multi-perspective trace clustering for IoT-enhanced processes,” <em>Comput. Ind.</em>, vol. 175, p. 104419, 2026. <a href="https://doi.org/10.1016/j.compind.2025.104419">https://doi.org/10.1016/j.compind.2025.104419</a></p>
+  <p>[25] A. M. Khedr and S. Rani S, “Cloud-based congestion-aware data distribution for healthcare IoT using Laplacian kernel clustering and censored weighted queuing,” <em>Neural Comput. Appl.</em>, vol. 38, no. 5, p. 117, 2026. <a href="https://doi.org/10.1007/s00521-026-11854-1">https://doi.org/10.1007/s00521-026-11854-1</a></p>
+  <p>[26] B. C. da Silva, R. Pereira dos Santos, and D. Viana, “ReqCluster4IoT: A clustering method for functional requirements in Internet of Things applications,” <em>Requirements Eng.</em>, vol. 31, no. 2, p. 12, 2026. <a href="https://doi.org/10.1007/s00766-026-00467-8">https://doi.org/10.1007/s00766-026-00467-8</a></p>
+</div>
+
+</body>
+</html>
